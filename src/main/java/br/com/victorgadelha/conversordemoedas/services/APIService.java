@@ -1,4 +1,4 @@
-package br.com.victorgadelha.conversordemoedas.service;
+package br.com.victorgadelha.conversordemoedas.services;
 
 import java.net.URI;
 import java.net.http.HttpClient;
