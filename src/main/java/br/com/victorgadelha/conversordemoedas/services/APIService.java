@@ -11,7 +11,7 @@ public class APIService {
     private Dotenv dotenv = Dotenv.load();
     private String apiKey = dotenv.get("API_KEY");
 
-    public void getCurrency() {
+    public String getCurrency() {
 
         try {
 
@@ -23,12 +23,16 @@ public class APIService {
                     .build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String allCurrencies = response.body();
 
             System.out.println("Status code: " + response.statusCode());
-            System.out.println("Response body: " + response.body());
+            System.out.println("Response body: " + allCurrencies);
+
+            return allCurrencies;
 
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 }
