@@ -1,7 +1,6 @@
 package br.com.victorgadelha.conversordemoedas.model;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -11,7 +10,25 @@ public class Currency {
     private String currencyName;
 
     @SerializedName("conversion_rates")
-    private HashMap<String, Double> exchangeRates;
+    private Map<String, Double> exchangeRates;
+
+    private Double currencyValue;
+
+    public String getCurrencyName() {
+        return currencyName;
+    }
+
+    public Map<String, Double> getExchangeRates() {
+        return exchangeRates;
+    }
+
+    public Double getCurrencyValue() {
+        return currencyValue;
+    }
+
+    public void setCurrencyValue(Double currencyValue) {
+        this.currencyValue = currencyValue;
+    }
 
     @Override
     public String toString() {

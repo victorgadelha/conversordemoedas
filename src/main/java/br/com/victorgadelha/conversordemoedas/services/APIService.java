@@ -15,10 +15,13 @@ public class APIService {
 
         try {
 
+            var menuService = new MenuService();
+
             HttpClient client = HttpClient.newHttpClient();
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://v6.exchangerate-api.com/v6/" + apiKey + "/latest/USD"))
+                    .uri(new URI(
+                            "https://v6.exchangerate-api.com/v6/" + apiKey + "/latest/" + menuService.currencyMenu()))
                     .GET()
                     .build();
 
