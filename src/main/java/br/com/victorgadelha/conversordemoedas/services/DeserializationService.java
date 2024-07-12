@@ -1,16 +1,15 @@
 package br.com.victorgadelha.conversordemoedas.services;
 
-import java.net.http.HttpResponse;
-
 import com.google.gson.Gson;
 
 import br.com.victorgadelha.conversordemoedas.model.Currency;
 
 public class DeserializationService {
+    APIService apiService = new APIService();
     Gson gson = new Gson();
 
-    public Currency deserializeJson(HttpResponse<String> response) {
-        String responseBody = response.body();
+    public Currency deserializeJson(String response) {
+        String responseBody = apiService.getCurrency();
         Currency currency = gson.fromJson(responseBody, Currency.class);
         return currency;
     }
