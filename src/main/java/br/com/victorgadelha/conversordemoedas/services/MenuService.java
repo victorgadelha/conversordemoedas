@@ -1,9 +1,8 @@
 package br.com.victorgadelha.conversordemoedas.services;
 
-import java.util.Scanner;
-
 public class MenuService {
-    public String currencyMenu() {
+
+    public void currencyMenu() {
 
         System.out.println("""
                 ************************************************************
@@ -19,27 +18,6 @@ public class MenuService {
                     Escolha uma opção válida:
                 ************************************************************
                     """);
-        Scanner scanner = new Scanner(System.in);
-        int option = scanner.nextInt();
-        scanner.close();
-        //
-        switch (option) {
-            case 1:
-                return "USD";
-            case 2:
-                return "ARS";
-            case 3:
-                return "BRL";
-            case 4:
-                return "CLP";
-            case 5:
-                return "COP";
-            case 6:
-                return "BOB";
-            default:
-                System.out.println("Opção inválida! Escolha alguma das opções mostradas no menu.");
-                return null; // ou lançar uma exceção, dependendo do contexto
-        }
-    }
 
+    }
 }
