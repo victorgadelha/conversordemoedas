@@ -51,9 +51,6 @@ public class APIService {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String allCurrencies = response.body();
 
-            System.out.println("Status code: " + response.statusCode());
-            System.out.println("Response body: " + allCurrencies);
-
             return allCurrencies;
 
         } catch (Exception e) {

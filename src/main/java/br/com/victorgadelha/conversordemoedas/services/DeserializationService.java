@@ -1,47 +1,81 @@
 package br.com.victorgadelha.conversordemoedas.services;
 
-//import java.util.Map;
-
 import com.google.gson.Gson;
-
 import br.com.victorgadelha.conversordemoedas.model.Currency;
 
 public class DeserializationService {
 
-    Gson gson = new Gson();
+    private Gson gson = new Gson();
 
-    public Currency deserializeJson(String apiService) {
+    public Currency deserializeJson(String apiService, Double scannerValue) {
         Currency currency = gson.fromJson(apiService, Currency.class);
         String currencyName = currency.getCurrencyName();
-        Double currencyValue;
+        Double currencyValue = null;
 
         switch (currencyName) {
             case "USD":
-                currencyValue = currency.setCurrencyValue(currency.getExchangeRates().get("ARS"));
+                currencyValue = scannerValue * currency.getExchangeRates().get("ARS");
+                System.out.println(
+                        "***************************************************************************************\n" +
+                                "O valor " + scannerValue + " [" + currencyName + "] corresponde ao valor final de =>> "
+                                +
+                                currencyValue + " [ARS]\n" +
+                                "***************************************************************************************");
                 break;
             case "ARS":
-                currencyValue = currency.setCurrencyValue(currency.getExchangeRates().get("BRL"));
+                currencyValue = scannerValue * currency.getExchangeRates().get("BRL");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------\n"
+                                +
+                                "O valor " + scannerValue + " [" + currencyName + "] corresponde ao valor final de =>> "
+                                +
+                                currencyValue + " [BRL]\n" +
+                                "----------------------------------------------------------------------------------------");
                 break;
             case "BRL":
-                currencyValue = currency.setCurrencyValue(currency.getExchangeRates().get("CLP"));
+                currencyValue = scannerValue * currency.getExchangeRates().get("CLP");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------\n"
+                                +
+                                "O valor " + scannerValue + " [" + currencyName + "] corresponde ao valor final de =>> "
+                                +
+                                currencyValue + " [CLP]\n" +
+                                "----------------------------------------------------------------------------------------");
                 break;
             case "CLP":
-                currencyValue = currency.setCurrencyValue(currency.getExchangeRates().get("COP"));
+                currencyValue = scannerValue * currency.getExchangeRates().get("COP");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------\n"
+                                +
+                                "O valor " + scannerValue + " [" + currencyName + "] corresponde ao valor final de =>> "
+                                +
+                                currencyValue + " [COP]\n" +
+                                "----------------------------------------------------------------------------------------");
                 break;
             case "COP":
-                currencyValue = currency.setCurrencyValue(currency.getExchangeRates().get("BOB"));
+                currencyValue = scannerValue * currency.getExchangeRates().get("BOB");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------\n"
+                                +
+                                "O valor " + scannerValue + " [" + currencyName + "] corresponde ao valor final de =>> "
+                                +
+                                currencyValue + " [BOB]\n" +
+                                "----------------------------------------------------------------------------------------");
                 break;
             case "BOB":
-                currencyValue = currency.setCurrencyValue(currency.getExchangeRates().get("USD"));
+                currencyValue = scannerValue * currency.getExchangeRates().get("USD");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------\n"
+                                +
+                                "O valor " + scannerValue + " [" + currencyName + "] corresponde ao valor final de =>> "
+                                +
+                                currencyValue + " [USD]\n" +
+                                "----------------------------------------------------------------------------------------");
                 break;
             default:
                 System.out.println("Moeda não suportada.");
                 break;
         }
-
-        System.out.println(
-                "O valor + " + "[" + currencyName + "] " + " corresponde ao valor final de =>> "
-                        + currency.getCurrencyValue());
 
         return currency;
     }
