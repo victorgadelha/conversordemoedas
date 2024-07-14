@@ -26,8 +26,8 @@ public class Currency {
         return currencyValue;
     }
 
-    public void setCurrencyValue(Double currencyValue) {
-        this.currencyValue = currencyValue;
+    public Double setCurrencyValue(Double currencyValue) {
+        return this.currencyValue = currencyValue;
     }
 
     @Override

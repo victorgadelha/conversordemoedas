@@ -14,7 +14,9 @@ public class Main {
         var apiService = new APIService();
         var scannerService = new ScannerService();
 
-        apiService.getCurrency(scannerService.scanOption());
+        var deserializationService = new DeserializationService();
+
+        deserializationService.deserializeJson(apiService.getCurrency(scannerService.scanOption()));
 
     }
 }

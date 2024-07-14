@@ -14,6 +14,7 @@ public class MenuService {
                     4 - "CLP [Peso Chileno] =>> COP [Peso Colombiano]"
                     5 - "COP [Peso Colombiano] =>> BOB [Boliviano Boliviano]"
                     6 - "BOB [Boliviano Boliviano] =>> USD [Dólar Americano]"
+                    7 - Sair
 
                     Escolha uma opção válida:
                 ************************************************************
