@@ -1,5 +1,12 @@
 # Conversor de Moedas
 
+<div align="center">
+  
+![Badge-Conversor](https://github.com/user-attachments/assets/14c7e6c4-ae21-48f5-b465-4cb89cd517ea)
+
+</div>
+
+
 ### Descrição
 Projeto desenvolvido para o primeiro desafio da fase de specialização em backend do programa **ONE - Oracle Next Education em parceria com a Alura**. Consiste em um aplicativo simples de linha de comando em Java para converter valores entre diferentes moedas. Utilizando a API de taxa de câmbio externa, o aplicativo permite ao usuário selecionar uma moeda de origem e uma moeda de destino, inserir um valor a ser convertido e exibe o resultado da conversão.
 
